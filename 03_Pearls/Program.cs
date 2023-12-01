@@ -2,13 +2,50 @@
 using System.Security.Cryptography;
 using System.Text;
 
+using Helpers;
+
 namespace _03_Pearls;
+
+
+public enum Season { Winter, Summer, Fall}
 
 class Program
 {
     static void Main(string[] args)
     {
+
+        int[] list = { 1, 3, -5, 8, 6, 10 };
+        int minVal = int.MaxValue;
+
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i] <= minVal )
+                minVal = list[i];
+
+        }
+
+        Console.WriteLine(minVal);
+
+
+        int maxVal = int.MinValue;
+
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i] >= maxVal)
+                maxVal = list[i];
+
+        }
+
+        Console.WriteLine(maxVal);
+
+
         Console.WriteLine("Hello, World!");
+
+        var rnd = new csSeedGenerator();
+
+        Console.WriteLine(rnd.Next(5, 26));
+        Console.WriteLine(rnd.FromEnum<Season>());
+
     }
 }
 
@@ -25,16 +62,16 @@ class Program
 
 // 4. Skapa en ToString i din pärlklass som presenterar pärlan.
 //
-// 4. Skapa ett halsband bestående av 10 pärlor av slumpmässig storlek, färg
+// 5. Skapa ett halsband bestående av 10 pärlor av slumpmässig storlek, färg
 //    form, och typ
 //
-// 5. Skriv kod som visar vilken färg, form och typ har den minsta och den största pärlan i halsbandet?
+// 6. Skriv kod som visar vilken färg, form och typ har den minsta och den största pärlan i halsbandet?
 //
-// 6. Deklarera en contruktor som tillåter dig att själv bestämma alla csPearl public properties
+// 7. Deklarera en contruktor som tillåter dig att själv bestämma alla csPearl public properties
 //
-// 7. Deklarera en Copy constructor.
+// 8. Deklarera en Copy constructor.
 //
-// 8. Använd copy constructorn för att skapa ett nytt halsband som är en kopia av ursprunget
+// 9. Använd copy constructorn för att skapa ett nytt halsband som är en kopia av ursprunget
 
 
 
